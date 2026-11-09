@@ -1,0 +1,37 @@
+<div class="navbar">
+    <div class="logo"><img src="Jerely-cp.png" alt="logo jerely"></div>
+    <!-- <div class="menu">
+        <a (click)="goToHome()">Accueil</a>
+        <a>Client</a>
+        <a>Messages</a>
+        <a>Comunnoté</a>
+        <a>Apropos</a>
+    </div> -->
+
+    <h1>FAV - Acheter vendre</h1>
+    
+    <div class="compte" (click)="ShowInfo()">
+        @if (infoShwo()) {
+            <mat-icon class="icon">keyboard_arrow_up</mat-icon>
+        }@else {
+            <mat-icon class="icon">account_circle</mat-icon>
+        }
+    </div>
+
+    <div class="info" [class.show]="infoShwo()">
+        <div class="photo">
+            <mat-icon class="icon">account_circle</mat-icon>
+            <div class="nom-prenom">
+                <h3>RAFANOMEZANTSOA</h3>
+                <h5>Mahazo Tina Faniry</h5>
+            </div>
+        </div>
+        <div class="menu_2">
+            <a class="m">Paramètre</a>
+            <a class="m">Compte</a>
+            <a class="m">Abonnement</a>
+            <a class="m">Sécurité</a>
+            <a class="btn"><mat-icon>logout</mat-icon>Se deconnecter</a>       
+        </div>
+    </div>
+</div>

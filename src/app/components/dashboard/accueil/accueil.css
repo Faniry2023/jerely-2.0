@@ -1,0 +1,52 @@
+*, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+main h1{
+    color: var(--text-primary);
+    font-size: 40px;
+}
+main p{
+    width: 800px;
+    height: auto;
+    background-color: var(--surface-secondary);
+    color: var(--text-secondary);
+    border: 3px var(--border) solid;
+    text-align: center;
+    padding: 20px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    line-height: 2;
+}
+main .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 2px var(--border) solid;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    a:hover{
+        box-shadow: 0 0 1px 2px var(--surface-hover);
+    }
+    a.ia{
+        color: var(--primary);
+    }
+}

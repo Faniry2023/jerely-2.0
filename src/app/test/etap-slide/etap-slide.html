@@ -1,0 +1,54 @@
+<div class="form-container">
+  <div class="form-slider" [@slideForm]="stepState">
+    <!-- Étape 1 -->
+    <form  class="form-step">
+      <h2>Informations personnelles</h2>
+
+      <label>Nom :</label>
+      <input type="text" formControlName="nom" placeholder="Entrez votre nom" />
+
+      <label>Prénom :</label>
+      <input type="text" formControlName="prenom" placeholder="Entrez votre prénom" />
+
+      <label>Adresse :</label>
+      <input type="text" formControlName="adresse" placeholder="Votre adresse" />
+
+      <label>Photo :</label>
+      <input type="file"  />
+
+    </form>
+
+    <!-- Étape 2 -->
+    <form  class="form-step">
+      <h2>Compte utilisateur</h2>
+
+      <label>Email :</label>
+      <input type="email" formControlName="email" placeholder="exemple@mail.com" />
+
+      <label>Pseudo :</label>
+      <input type="text" formControlName="pseudo" placeholder="Votre pseudo" />
+
+      <label>Mot de passe :</label>
+      <input type="password" formControlName="mdp" placeholder="Mot de passe" />
+
+      <label>Confirmer le mot de passe :</label>
+      <input type="password" formControlName="confirmMdp" placeholder="Confirmer le mot de passe" />
+    </form>
+  </div>
+
+  <!-- Boutons -->
+  <div class="buttons">
+    <h1>coucou</h1>
+    @if(step === 1){
+    <button (click)="next()">Suivant</button>
+    }
+    @if(step === 2){
+    <div class="btn-group">
+      <button (click)="prev()">Précédent</button>
+      <button >Enregistrer</button>
+    </div>
+    }
+
+
+  </div>
+</div>

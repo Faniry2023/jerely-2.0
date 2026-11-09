@@ -1,0 +1,178 @@
+.navbar{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-secondary);
+    width: 100%;
+    height: 70px;
+    left: 0;
+    top: 0;
+    z-index: 9;
+}
+.navbar h1{
+    color: var(--text-primary);
+    letter-spacing: 10px;
+}
+.navbar .icon{
+    color: var(--text-primary);
+}
+.logo{
+    height: 40px;
+    width: 200px;
+    overflow: hidden;
+    margin-left: 20px;
+    border-radius: 30px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+.menu a{
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 20px;
+    color: rgb(236, 236, 236);
+    font-weight: 700;
+    letter-spacing: 3px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+.menu a::after {
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 40px; /* distance du texte */
+  width: 0%;
+  height: 5px;
+  background-color: #FE5442; /* couleur du soulignement */
+  transition: width 0.3s ease;
+}
+
+/* SURVOL : on fait "grandir" la ligne */
+.menu a:hover::after {
+  width: 100%;
+}
+.menu a:hover {
+  color: #FE5442;
+  letter-spacing: 5px;
+  padding: 5px 15px;
+}
+.compte{
+    z-index: 2;
+  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+    transition: box-shadow 0.3s ease;
+    border: 3px var(--primary) solid;
+}
+.compte:hover{
+    box-shadow: 0 0 15px 4px #FE5442;
+}
+.btn{
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+}
+.btn a, .menu_2 .btn{
+    cursor: pointer;
+      background-color: #FE5442;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      transition: background-color 0.5s ease;
+}
+.btn a:hover, .menu_2 .btn:hover{
+    background: #bb2c1c;
+}
+/* info */
+.info{
+    right: 5px;
+    top: -400px;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.377);
+    padding: 5px;
+    border-radius: 20px;
+    transition: top 0.5s ease-in, opacity 2s ease;
+    box-shadow: 0 0 10px 2px white;
+    gap: 20px;
+}
+.info.show{
+    top: 80px;
+    opacity: 1;
+}
+.info .photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        color: white;
+        font-size: 40px;
+    }
+    h3,h5{
+        margin: 0;
+        color: white;
+        letter-spacing: 2px;
+    }
+    .nom-prenom{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.info .menu_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.info .menu_2 a.m{
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+    width: 150px;
+    color: white;
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.info .menu_2 a.m:hover{
+    letter-spacing: 5px;
+    box-shadow: 0 0 7px 1px #b3b3b3;
+}
+.info .menu_2 a.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}

@@ -1,0 +1,133 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(228, 228, 228); */
+    background-color: var(--surface);
+}
+.menu{
+    top: 300px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    gap: 50px;
+    left: -220px;
+    transition: left 0.5s ease-in,opacity 1s ease-in;
+}
+.menu.shwo{
+    left: 10px;
+}
+.menu .menu-full, .menu .menu-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px #FE5442 solid;
+    a{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 100%;
+        background-color: #FE5442;
+        color: white;
+    }
+    .btn{
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        .ch{
+            color: rgb(116, 116, 116);
+            transition: all 0.2s ease;
+        }
+    }
+    .btn:hover{
+        .ch{
+            color: var(--text-primary);
+            width: 30px;
+            font-size: 30px;
+        }
+    }
+}
+
+.menu .menu-full{
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    a{
+        width: 150px;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-bottom: 1px white solid;
+        transition: all 0.3s ease;
+    }
+    a:hover{
+        letter-spacing: 5px;
+        background-color: #b63324;
+        border-left: 5px white solid;
+        width: 145px;
+    }
+}
+.menu.shwo .menu-icon{
+    opacity: 0;
+    pointer-events: none;
+}
+.menu .menu-icon{
+    opacity: 1;
+    transition: all 1s ease;
+    a{
+        width: 40px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        .myicon{
+            width: 25px;
+            font-size: 25px;
+            color: rgb(216, 216, 216);
+            transition: all 0.3s ease;
+        }
+    }
+    a:hover:hover{
+        background-color: #b63324;
+        .myicon{
+            width: 30px;
+            font-size: 30px;
+            color: white;
+        }
+    }
+}
+.menu .menu-icon{
+    a{
+        font-size: 18px;
+        padding: 5px 10px;
+        border-bottom: 1px white solid;
+    }
+}
+.menu .menu-icon.show{
+    opacity: 1;
+}
+.menu .menu-full a.active, .menu .menu-icon a.active{
+    background-color: #751c12;
+}
+.menu .menu-full a.active{
+    border-left: 15px white solid;
+    width: 135px;
+}
+.menu .menu-icon a.active .myicon{
+    width: 30px;
+    font-size: 30px;
+    color: white;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+}

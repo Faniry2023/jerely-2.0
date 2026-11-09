@@ -1,0 +1,30 @@
+<mat-card class="service-card">
+  <mat-card-header>
+    <div mat-card-avatar class="service-avatar"></div>
+    <mat-card-title>{{ service.title }}</mat-card-title>
+    <mat-card-subtitle>{{ service.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <section class="price-section">
+      <p><strong>💰 Prix :</strong> {{ service.price }}</p>
+      <p><strong>📅 Abonnement :</strong> {{ service.abonnement }}</p>
+      <p><strong>⏱️ Délai :</strong> {{ service.delay }}</p>
+    </section>
+
+    <p class="description">{{ service.description }}</p>
+
+    <h3>✅ Avantages</h3>
+    <ul>
+        @for (adv of service.advantages; track $index) {
+            <li>{{ adv }}</li>
+        }
+      
+    </ul>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-stroked-button color="primary" (click)="close()">Fermer</button>
+    <button mat-flat-button color="accent">Demander ce service</button>
+  </mat-card-actions>
+</mat-card>

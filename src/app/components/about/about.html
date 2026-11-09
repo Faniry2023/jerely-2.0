@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <!-- <div class="head">
+            <div class="logo"><img src="Jerely-cp.png" alt=""></div>
+            <div class="navbar">
+                <a (click)="scrollToSection('accueil')" class="lien"><p>Accueil</p></a>
+                <a (click)="scrollToSection('nos-services')" class="lien"><p>Nos service</p></a>
+                <a (click)="scrollToSection('nos-clients')" class="lien"><p>Nos clients</p></a>
+                <a class="lien"><p>Apropos</p></a>
+                <a class="lien"><p>Nous contacter</p></a>
+                <div class="btn"><a href="jerely/login">Se connecter</a></div>
+            </div>
+        </div> -->
+        <app-navbar></app-navbar>
+        <div id="accueil" class="header">
+            <div class="gauche">
+                <div class="logo"><img src="borcelle-logo-Photoroom.png" alt="">
+                </div>
+                <div class="titre"><h1 class="typing">JERELY</h1></div>
+                <div class="texte"><p>Avec JERELY, créez et déployez votre plateforme digitale en un instant.</p></div>
+            </div>
+            <div class="droite">
+                <div class="grand-image">
+                    <div class="img">
+                        <img src="prod.svg" alt="">
+                    </div>
+                    <div class="petit-img">
+                        <img  src="laptop.svg" alt="">
+                    </div>
+                </div>
+                <div class="explication">
+                    <p>JERELY vous accompagne pour transformer vos idées en plateformes web rapidement, que vous soyez entrepreneur, particulier ou passionné, avec des solutions clés en main et personnalisables.  </p>
+                </div>
+                <div class="btn">
+                    <a>Vous avez une idée ? Parlons-en ensemble!</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="nos-services" >
+            <div class="titre">
+                <h1>Nos Service</h1>
+            </div>
+            <div class="texte-service" [@slideIn]="visibleItems[0] ? 'visible' : 'hidden'">
+                <p>Chez JERELY, nous mettons à votre disposition trois services pensés pour répondre à tous vos besoins numériques.
+                Que vous souhaitiez choisir un thème déjà prêt et personnalisable, créer une plateforme sur mesure à partir de votre maquette, ou encore héberger et gérer facilement votre site en ligne, notre équipe vous accompagne à chaque étape.
+                Notre objectif est simple : vous permettre de concrétiser votre idée rapidement, avec un design professionnel et des fonctionnalités adaptées à votre activité.</p>
+            </div>
+            <div class="services">
+                <div class="service" [@slideIn]="visibleItems[1] ? 'visible' : 'hidden'">
+                    <img src="nos-services/web-f.svg" alt="">
+                    <div class="descript">Créez votre site à votre image : choisissez vos couleurs, vos boutons et vos styles.</div>
+                    <div class="prix"><p>450 000 Ariary</p></div>
+                    <div class="btn"><a (click)="openPopup(1)">En savoir plus</a></div>
+                </div>
+                <div class="service" [@slideIn]="visibleItems[1] ? 'visible' : 'hidden'">
+                    <img src="nos-services/design.svg" height="10" alt="">
+                    <div class="descript">Donnez votre maquette, JERELY la transforme en une plateforme complète selon vos besoins.</div>
+                    <div class="prix"><p>1 000 000 Ariary</p></div>
+                    <div class="btn"><a (click)="openPopup(2)">En savoir plus</a></div>
+                </div>
+                <div class="service" [@slideIn]="visibleItems[1] ? 'visible' : 'hidden'">
+                    <img src="nos-services/conc.svg" alt="">
+                    <div class="descript">Personnalisez entièrement votre site : design, fonctionnalités et style, et nous le développons de A à Z.</div>
+                    <div class="prix"><p>3 000 000 Ariary</p></div>
+                    <div class="btn"><a (click)="openPopup(3)">En savoir plus</a></div>
+                </div>
+            </div>
+        </section>
+        <section id="nos-clients">
+            <div class="titre">
+                <h1>Nos Clients</h1>
+            </div>
+
+            <div class="texte-client" [@slideIn]="visibleItems[3] ? 'visible' : 'hidden'">
+                <p>
+                Chez JERELY, nous mettons à votre disposition trois services pensés pour répondre à tous vos besoins numériques.
+                Que vous souhaitiez choisir un thème déjà prêt et personnalisable, créer une plateforme sur mesure à partir de votre maquette,
+                ou encore héberger et gérer facilement votre site en ligne, notre équipe vous accompagne à chaque étape.
+                </p>
+            </div>
+
+            <div class="container-client" [@slideIn]="visibleItems[3] ? 'visible' : 'hidden'">
+                <div
+                class="clients"
+                [style.transform]="getTransform()"
+                >
+                @for (t of test; track i; let i = $index) {
+                    <div class="client" >
+                    <div class="img"><img src="nos-client/m.jpg" alt=""></div>
+                    <div class="info">
+                        <div class="nom-prenom">
+                        <p>RAFANOMEZANTSOA</p>
+                        <p>Mahazo Tina Faniry</p>
+                        </div>
+                        <div class="nom-plateforme">LES JOB</div>
+                        <div class="descript">
+                        Chez JERELY, j'ai pu réaliser mon projet avec succès. Il nous a guidés jusqu'au lancement final du projet,
+                        et nous avons décidé de rester avec lui.
+                        </div>
+                        <div class="btn-client"><a>Profil</a></div>
+                    </div>
+                    </div>
+                }
+                </div>
+
+                <button class="btn left" (click)="prevSlide()">&#10094;</button>
+                <button class="btn right" (click)="nextSlide()">&#10095;</button>
+            </div>
+            <!-- <div class="client-ann">
+                @for (m of mois; track $index) {
+                    <div class="mois">
+                        <div class="nom-moi">
+                            <h2>{{m}}</h2>
+                        </div>
+                        <div class="chiffre">
+                            <p>{{$index}} clients</p>
+                        </div>
+                    </div>
+                }
+            </div> -->
+        </section>
+
+        <section id="nous-contacter" >
+            <div class="titre">
+                <h1>Nous contacter</h1>
+            </div>
+
+        <div class="contact-content">
+            <div class="formulaire">
+                        <!-- ton formulaire ici -->
+                <form>
+                    <input type="text" placeholder="Nom" />
+                    <input type="email" placeholder="Email" />
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+
+            <div class="contact-map">
+                <google-map
+                    height="400px"
+                    width="100%"
+                    [center]="center"
+                    [zoom]="16"
+                    [options]="mapOptions">
+                    <map-marker [position]="center" [title]="'Notre siège'" />
+                </google-map>
+            </div>
+        </div>
+        </section>
+    </main>
+    <app-footer></app-footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-header></app-header>
+    <div class="menu" [class.shwo]="menu()">
+        <div class="menu-full">
+            <div class="btn" (click)="showMenu()"><mat-icon class="ch">chevron_left</mat-icon></div>
+            <a (click)="goToHome()">Jerely</a>
+            <a>Accueil</a>
+            <a class="active">Plateforme</a>
+            <a>Utilisateur</a>
+            <a>Produits</a>
+            <a>Méssage</a>
+            <a>Graphique</a>
+        </div>
+        <div class="menu-icon " [class.show]="menu() === false">
+            <div class="btn" (click)="showMenu()"><mat-icon class="ch">chevron_right</mat-icon></div>
+            <a (click)="goToHome()"><mat-icon class="myicon" >home</mat-icon></a>
+            <a><mat-icon class="myicon">dashboard</mat-icon></a>
+            <a class="active"><mat-icon class="myicon">widgets</mat-icon></a>
+            <a><mat-icon class="myicon">group</mat-icon></a>
+            <a><mat-icon class="myicon">store</mat-icon></a>
+            <a><mat-icon class="myicon">forum</mat-icon></a>
+            <a><mat-icon class="myicon">insert_chart</mat-icon></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- <app-messages></app-messages> -->
+         <app-accueil></app-accueil>
+    </div>
+</body>
+</html>

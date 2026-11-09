@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --primary: #FE5442;
+    --primary-hover: #E94334;
+    --primary-soft: #FFF0ED;
+
+    --background: #F4F6FA;
+    --surface: #FFFFFF;
+    --surface-secondary: #F7F8FA;
+    --surface-hover: #b4b4b4;
+
+    --text-primary: #101828;
+    --text-secondary: #64748B;
+
+    --border: #E5E9F0;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --info: #3B82F6;
+
+    color-scheme: light;
+}
+
+[data-theme="dark"]{
+    --primary: #FE5442;
+    --primary-hover: #FF7769;
+    --primary-soft: #351A20;
+
+    --background: #010A1B;
+    --surface: #071327;
+    --surface-secondary: #0D1B32;
+
+    --text-primary: #F5F7FB;
+    --text-secondary: #AAB5C7;
+
+    --border: #1B2B43;
+
+    --success: #34D399;
+    --warning: #FBBF24;
+    --danger: #F87171;
+    --info: #60A5FA;
+
+    color-scheme: dark;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

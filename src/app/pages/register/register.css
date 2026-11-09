@@ -1,0 +1,179 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: 
+    linear-gradient(#000000f1,#06051d86, #000000), /* dégradé noir */
+    url('../../../../public/header/fondDev.jpg');    /* ton image */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+main{
+    background-color: rgba(7, 7, 7, 0.692);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    gap: 50px;
+    box-shadow: 0px 0px 10px 1px  white;
+    animation: slideIn 5s forwards ease;;
+}
+@keyframes slideIn {
+  from {opacity: 0; }
+  to { opacity: 1; } /* nombre de caractères à afficher */
+}
+main .logo{
+    cursor: pointer;
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 0px 2px 1px  white;
+    transition: box-shadow 1s ease;
+    img{
+        width: 500px;
+        height: auto;
+    }
+}
+main .logo:hover{
+    box-shadow: 0px 0px 12px 3px  white;
+}
+main .formulaire{
+    width: 495px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    .titre{
+        justify-self: start;
+    }
+    .titre h1{
+        color: #FFFFFF;
+        font-size: 40px;
+    }
+    .forms{
+        align-self: flex-start;
+        display: flex;
+        width: 200%;
+        overflow: hidden;
+    }
+    form{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+        .photo{
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 20px;
+            img{
+                width: 100px;
+                height: auto;
+            }
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            
+            width: 100%;
+            input{
+                height: 40px;
+                border-radius: 10px;
+                width: 400px;
+                padding: 0 0 0 20px;
+                font-size: 20px;
+                font-weight: 800;
+                outline: none;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+                color: rgb(226, 226, 226);
+                letter-spacing: 1px;
+                box-shadow: 0 0 5px 1px white;
+                transition: box-shadow 2s ease;
+            }
+            input:focus{
+                box-shadow: 0 0 15px 10px #FE5442;
+            }            
+            .mdp{
+                z-index: 15;
+                position: relative;
+                img{
+                    cursor: pointer;
+                    right: 10px;
+                    bottom: 7px;
+                    position: absolute;
+                    width: 30px;
+                    height: auto;
+                }
+            }
+        }
+        button{
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            font-size: 20px;
+            border-radius: 30px;
+            background-color: #ffffff05;
+            color: white;
+            transition: background-color 1s ease;
+            border: none;
+            box-shadow: 0 0 2px 1px white;
+        }
+        .ok{
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow 0.5s ease;
+            img{
+                width: 80px;
+                height: 80px;
+                background-color: transparent;
+            }
+            
+        }
+        .ok:hover{
+            box-shadow: 0 0 5px 1px white;
+        }
+        .btn{
+            display: flex;
+            gap: 50px;
+            margin-bottom: 5px;
+        }
+        button:hover{
+            background-color: #bb1a08;
+        }
+        .check{
+            cursor: pointer;
+            display: flex;
+            color: white;
+            font-size: 20px;
+        }
+    }
+    p{
+        color: white;
+        font-size: 20px;
+        a{
+            color: white;
+        }
+    }
+}

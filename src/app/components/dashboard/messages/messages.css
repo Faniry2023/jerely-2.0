@@ -1,0 +1,373 @@
+.messages{
+   height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.messages .admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 31, 31);
+    border: 2px #FE5442 solid;
+    padding: 10px;
+    border-radius: 20px;
+    width: 400px;
+    height: calc(100% - 250px);
+    box-shadow: 0 0 10px 2px #FE5442;
+    transition: all 0.3s ease;
+    h2{
+        letter-spacing: 5px;
+        color: white;
+    }
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        input{
+            width: 300px;
+            height: 50px;
+            padding: 0 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 3px 1px #0f0f0f;
+            transition: all 0.5s ease;
+        }
+        input:focus{
+            outline: none;
+            box-shadow: 0 0 8px 3px #0f0f0f;
+        }
+        .send{
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        .send:hover{
+            font-size: 40px;
+        }
+    }
+    .msg{
+        overflow-y: auto;
+    }
+    .msg::-webkit-scrollbar{
+        display: none;
+    }
+}
+.messages .admin:hover{
+    cursor: pointer;
+    box-shadow: 0 0 30px 5px #FE5442;
+}
+.messages .admin .me, .messages .admin .you, .messages .utilisateur .me, .messages .utilisateur .you {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 10px;
+    .date p{
+        margin-left: 50px;
+        color: rgb(199, 199, 199);
+    }
+    p{
+        margin: 0;
+    }
+    .photo-contenut{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        .contenue p{
+            font-size: 15px;
+            hyphens: auto;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: justify;
+            color: white;
+        }
+
+        .photo{
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+}
+.messages .you .photo-contenut p{
+        background-color: blue;
+}
+.messages .me .photo-contenut p{
+        background-color: rgb(2, 2, 46);
+}
+.messages .admin .msg, .messages .utilisateur .msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    gap: 15px;
+}
+.messages .admin .you, .messages .utilisateur .you, .messages .utilisateur .you-product{
+    align-self: flex-start;
+    align-items: flex-start;
+}
+.messages .admin .me, .messages .utilisateur .me{
+    align-self: flex-end;
+    align-items: flex-end;
+    .photo{
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .date p{
+        margin-right: 50px;
+    }
+}
+
+.messages .utilisateur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    
+}
+.utilisateur .liste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px #FE5442 solid;
+    border-radius: 20px;
+    height: 700px;
+    width: 300px;
+    gap: 50px;
+    box-shadow: 0 0 10px 2px #FE5442;
+    transition: all 0.3s ease;
+    input{
+        margin-top: 20px;
+        width: 200px;
+        height: 30px;
+        padding: 0 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: #e9e9e9;
+        font-size: 18px;
+        box-shadow: 0 0 3px 1px black;
+        transition: all 0.5s ease;
+    }
+    input:focus{
+        outline: none;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 5px 3px #FE5442;
+    }
+    .noms{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 100%;
+        overflow: auto;
+        padding-bottom: 20px;
+        overflow-y: auto;
+        a{
+            cursor: pointer;
+            border: 2px white solid;
+            width: 250px;
+            margin-left: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(56, 56, 56);
+            box-shadow: 0 0 5px 1px #ffffff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+        a:hover{
+            background-color: rgb(22, 22, 22);
+            box-shadow: 0 0 5px 3px #ffffff;
+        }
+        .info{
+            align-self: flex-start;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            .prenom{
+                justify-self: flex-start;
+                font-size: 20px;
+                font-weight: 600;
+                justify-content: flex-start;
+            }
+            .img{
+                justify-self: flex-start;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .cercle{
+                margin-right: 10px;
+                justify-self: flex-end;
+                height: 10px;
+                width: 10px;
+                background-color: green;
+                border-radius: 50%;
+            }
+        }
+    }
+    .noms::-webkit-scrollbar{
+        display: none;
+    }
+}
+.utilisateur .liste:hover{
+    box-shadow: 0 0 30px 5px #FE5442;
+}
+.utilisateur .mess{
+    height: 650px;
+    width: 500px;
+    padding: 10px 20px;
+    padding-bottom: 70px;
+    box-shadow: 0 0 12px 1px #FE5442;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    .me, .you{
+        margin-bottom: 50px;
+    }
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: -50px;
+        .send{
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+        .send:hover{
+            font-size: 25px;
+        }
+        input{
+            width: 60%;
+            height: 30px;
+            border-radius: 10px;
+            padding: 5px 5px 5px 10px;
+            hyphens: auto;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        input:focus{
+            outline: none;
+            box-shadow: 0 0 10px 2px black;
+        }
+    }
+    .nom-select{
+        color: white;
+    }
+    .you-product{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-bottom: 40px;
+        .photo-contenut{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .photo{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .product{
+            width: 300px;
+            background-color: blue;
+            color: white;
+            border-radius: 20px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .contenue{
+                padding: 0 20px;
+            }
+            .title{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bolder;
+            }
+            button{
+                width: 100%;
+                background-color: #FE5442;
+                border-radius: 0 0 20px 20px;
+                height: 40px;
+                color: white;
+                cursor: pointer;
+                letter-spacing: 3px;
+                transition: all 0.4s ease;
+            }
+            button:hover{
+                background-color: #c43d2e;
+                letter-spacing: 10px;
+            }
+        }
+        .date{
+            color: rgb(202, 202, 202);
+            margin-left: 50px;
+        }
+    }
+}
+.utilisateur .mess:hover{
+    box-shadow: 0 0 22px 3px #FE5442;
+}
+.utilisateur .mess .msg{
+    overflow-y: auto;
+}
+.utilisateur .mess .msg::-webkit-scrollbar {
+  display: none;            
+}

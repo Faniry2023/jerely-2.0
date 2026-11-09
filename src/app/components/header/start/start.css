@@ -1,0 +1,144 @@
+.header{
+    background-image: 
+    linear-gradient(#000000,#01011aa1, #01000c5d), /* dégradé noir */
+    url('../../../../../public/fond.jpeg');    /* ton image */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+.titre{
+    margin-top: 80px;
+}
+h1{
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.typing {
+    margin-top: 0px;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(0, 0, 0, 0); /* curseur */
+  width: 0;
+  height: 100px;
+  animation: typing 3s steps(6, end) forwards, blink 0.7s step-end infinite;
+  color: #FE5442;
+  font-size: 50px;
+
+  
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 6ch; } /* nombre de caractères à afficher */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.header .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    h2{
+        color: rgb(235, 235, 235);
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+    p{
+        color: rgb(223, 223, 223);
+        margin: 0;
+        width: 800px;
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 10px;
+        line-height: 1.2;
+    }
+}
+.recherche{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.recherche input{
+    width: 600px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.801);
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px 0 10px;
+    box-shadow: 0 0 15px 5px #0f0f0f;
+    transition: all 0.3s ease;
+}
+.recherche input:focus{
+    outline: none;
+    box-shadow: 0 0 18px 15px #0f0f0f;
+}
+.recherche button{
+    background-color: transparent;
+    border: none;
+}
+.recherche .myicon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.795);
+    box-shadow: 0 0 15px 5px #0f0f0f;
+    transition: all 0.3s ease;
+}
+.recherche .myicon:hover{
+    font-size: 40px;
+    box-shadow: 0 0 18px 15px #0f0f0f;
+}
+.header .text{
+    h2{
+        transform: translateY(-100%);
+        animation: slideh2 4s forwards ease-out;
+    }
+    p{
+        transform: translateY(100%);
+        animation: slidep 4s forwards ease-out;
+    }
+}
+@keyframes slideh2 {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slidep {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
