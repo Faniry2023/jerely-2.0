@@ -1,9 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, signal } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [MatIcon],
   templateUrl: './register.html',
   styleUrls: ['./register.css'],
   animations: [

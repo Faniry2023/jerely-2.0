@@ -50,7 +50,34 @@ main .formulaire{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 20px;
+    .btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a{
+            cursor: pointer;
+            border: 1px white solid;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            gap: 10px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            img{
+                width: 20px;
+                height: auto;
+            }
+        }
+        a:hover{
+            background-color: white;
+            color: black;
+        }
+    }
     .titre{
         justify-self: start;
     }

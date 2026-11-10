@@ -53,6 +53,33 @@ main .formulaire{
     justify-content: center;
     gap: 10px;
     overflow: hidden;
+    .btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a{
+            cursor: pointer;
+            border: 1px white solid;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            gap: 10px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            img{
+                width: 20px;
+                height: auto;
+            }
+        }
+        a:hover{
+            background-color: white;
+            color: black;
+        }
+    }
     .titre{
         justify-self: start;
     }
@@ -65,6 +92,7 @@ main .formulaire{
         display: flex;
         width: 200%;
         overflow: hidden;
+
     }
     form{
         margin-top: 20px;
@@ -125,15 +153,16 @@ main .formulaire{
         }
         button{
             cursor: pointer;
-            width: 80px;
-            height: 80px;
+            width: 200px;
+            height: 40px;
             font-size: 20px;
-            border-radius: 30px;
-            background-color: #ffffff05;
+            border-radius: 10px;
+            background-color: #FE5442;
             color: white;
             transition: background-color 1s ease;
-            border: none;
-            box-shadow: 0 0 2px 1px white;
+        }
+        button:hover{
+            background-color: #bb1a08;
         }
         .ok{
             background-color: transparent;

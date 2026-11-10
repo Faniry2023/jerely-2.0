@@ -8,34 +8,42 @@
 <body>
     <main>
         <a href="jerely">
-        <div class="logo">
-            <div class="img"><img src="borcelle.png" alt=""></div>
-        </div>
+            <div class="logo">
+                <div class="img"><img src="borcelle.png" alt=""></div>
+            </div>
         </a>
-        <div class="formulaire">
-            <div class="titre"><h1>Connexion</h1></div>
-            <form action="">
-                <div class="input">
-                    <input type="email" placeholder="votre email...">
-                </div>
-                <div class="input">
-                    <div class="mdp">
-                        <input [type]="pasShwo() ? 'text' : 'password'" placeholder="votre mot de passe...">
-                            @if (!pasShwo()) {
-                                <img class="icon" src="o-bb.png" alt="" (click)="pasShwo.set(!pasShwo())">
-                            }@else {
-                                <img class="icon" src="o-b.png" alt="" (click)="pasShwo.set(!pasShwo())">
-                            }
+        @if (isForm()) {
+            <div class="formulaire">
+                <div class="titre"><h1>Connexion</h1></div>
+                <form action="">
+                    <div class="input">
+                        <input type="email" placeholder="votre email...">
                     </div>
+                    <div class="input">
+                        <div class="mdp">
+                            <input [type]="pasShwo() ? 'text' : 'password'" placeholder="votre mot de passe...">
+                                @if (!pasShwo()) {
+                                    <img class="icon" src="o-bb.png" alt="" (click)="pasShwo.set(!pasShwo())">
+                                }@else {
+                                    <img class="icon" src="o-b.png" alt="" (click)="pasShwo.set(!pasShwo())">
+                                }
+                        </div>
+                    </div>
+                    <div class="check">
+                        <input id="svn" type="checkbox" >
+                        <label for="svn">Se souvenir de moi</label>
+                    </div>
+                    <button>Se connecter</button>
+                </form>
+                <div class="btn">
+                    <a>Continuer avec google <img src="google.png" alt="logo google"></a>
                 </div>
-                <div class="check">
-                    <input id="svn" type="checkbox" >
-                    <label for="svn">Se souvenir de moi</label>
-                </div>
-                <button>Se connecter</button>
-            </form>
-            <p>vous n'avez pas de compte? <a href="jerely/register"> Creer un compte</a></p>
-        </div>
+                <p>vous n'avez pas de compte? <a href="jerely/register"> Creer un compte</a></p>
+            </div>
+        }
+        @else {
+            <app-validationcode></app-validationcode>
+        }
     </main>
 </body>
 </html>
