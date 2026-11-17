@@ -13,6 +13,8 @@ html,body{
     align-items: center;
     
 }
+::ng-deep .white-spinner circle {
+  stroke: #d3d3d3 !important;}
 main{
     background-color: rgba(7, 7, 7, 0.692);
     width: 100%;
@@ -51,6 +53,11 @@ main .formulaire{
     align-items: center;
     justify-content: center;
     gap: 20px;
+    hr{
+        height: 1px;
+        width: 100%;
+        background-color: #FE5442;
+    }
     .btn{
         display: flex;
         flex-direction: column;
@@ -160,4 +167,9 @@ main .formulaire{
             color: white;
         }
     }
+}
+p.erreur{
+    background-color: rgb(105, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
 }

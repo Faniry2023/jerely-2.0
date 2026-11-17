@@ -22,7 +22,7 @@
         <div class="photo">
             <mat-icon class="icon">account_circle</mat-icon>
             <div class="nom-prenom">
-                <h3>RAFANOMEZANTSOA</h3>
+                <h3>{{authStore.login()?.email}}</h3>
                 <h5>Mahazo Tina Faniry</h5>
             </div>
         </div>
@@ -31,7 +31,14 @@
             <a class="m">Compte</a>
             <a class="m">Abonnement</a>
             <a class="m">Sécurité</a>
-            <a class="btn"><mat-icon>logout</mat-icon>Se deconnecter</a>       
+            <a (click)="logout()" class="btn">
+                @if(authStore.isLoading()){
+                    <mat-spinner class="white-spinner" [diameter]="30" [strokeWidth]="5"></mat-spinner>
+                }@else {
+                    <mat-icon>logout</mat-icon>Se deconnecter
+                }
+                
+            </a>       
         </div>
     </div>
 </div>

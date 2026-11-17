@@ -3,7 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+::ng-deep .white-spinner circle {
+  stroke: #d3d3d3 !important;}
 .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+}
+.container form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,4 +59,9 @@ button{
 }
 button:hover{
     background-color: #bb1a08;
+}
+p.erreur{
+    background-color: rgb(105, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
 }

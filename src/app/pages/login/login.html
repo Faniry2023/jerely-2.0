@@ -12,33 +12,36 @@
                 <div class="img"><img src="borcelle.png" alt=""></div>
             </div>
         </a>
-        @if (isForm()) {
+        @if (!authStore.await_code()) {
             <div class="formulaire">
                 <div class="titre"><h1>Connexion</h1></div>
-                <form action="">
+                <form  [formGroup]="form" (ngSubmit)="submit()">
                     <div class="input">
-                        <input type="email" placeholder="votre email...">
-                    </div>
-                    <div class="input">
-                        <div class="mdp">
-                            <input [type]="pasShwo() ? 'text' : 'password'" placeholder="votre mot de passe...">
-                                @if (!pasShwo()) {
-                                    <img class="icon" src="o-bb.png" alt="" (click)="pasShwo.set(!pasShwo())">
-                                }@else {
-                                    <img class="icon" src="o-b.png" alt="" (click)="pasShwo.set(!pasShwo())">
-                                }
-                        </div>
+                        <input type="email" placeholder="votre email..." formControlName="email">
                     </div>
                     <div class="check">
                         <input id="svn" type="checkbox" >
                         <label for="svn">Se souvenir de moi</label>
                     </div>
-                    <button>Se connecter</button>
+                    @if (authStore.isLoading()) {
+                        <mat-spinner class="white-spinner" [diameter]="30" [strokeWidth]="5"></mat-spinner>
+                    }@else {
+                        <button  type="submit">Continuer</button>
+                    }
+                    
+                    
                 </form>
-                <div class="btn">
-                    <a>Continuer avec google <img src="google.png" alt="logo google"></a>
-                </div>
+                <hr>
+                @if(!authStore.isLoading()){
+                    <div class="btn">
+                        <div #googleBtn></div>
+                    </div>
+                }
+
                 <p>vous n'avez pas de compte? <a href="jerely/register"> Creer un compte</a></p>
+                @if(authStore.isError()){
+                    <p class="erreur">{{authStore.error()}}</p>
+                }
             </div>
         }
         @else {
