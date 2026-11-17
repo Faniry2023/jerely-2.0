@@ -10,6 +10,8 @@
     top: 0;
     z-index: 9;
 }
+::ng-deep .white-spinner circle {
+  stroke: #d3d3d3 !important;}
 .navbar h1{
     color: var(--text-primary);
     letter-spacing: 10px;

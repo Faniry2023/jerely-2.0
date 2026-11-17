@@ -1,5 +1,16 @@
 <div class="container">
-    <p>Nous venons de vous envoyer un code de vérification par email. Veuillez consulter votre boîte de réception et saisir le code reçu pour confirmer votre identification.</p>
-    <input type="text" placeholder="XXXXXX" maxlength="6" >
-    <button>Continuer</button>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>Nous venons de vous envoyer un code de vérification par email. Veuillez consulter votre boîte de réception et saisir le code reçu pour confirmer votre identification.</p>
+        <input type="text" placeholder="XXXXXX" maxlength="6" formControlName="code" >
+        
+        @if(authStore.isLoading()){
+            <mat-spinner class="white-spinner" [diameter]="30" [strokeWidth]="5"></mat-spinner>
+        }@else {
+            <button type="submit">Continuer</button>
+        }
+        
+    </form>
+    @if(authStore.isError()){
+        <p class="erreur">{{authStore.error()}}</p>
+    }
 </div>
